@@ -12,7 +12,7 @@ class NPCXPRACTICALTEST_API ANPCxPickUpActor : public AActor, public INPCxPickUp
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditDefaultsOnly, Category = "Mesh", meta = (AllowPrivateAcces = "true"))
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh", meta = (AllowPrivateAcces = "true"))
 	class UStaticMeshComponent* StaticMesh = nullptr;
 	
 public:	

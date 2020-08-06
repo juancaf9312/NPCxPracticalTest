@@ -13,6 +13,7 @@ ANPCxPickUpActor::ANPCxPickUpActor()
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaticMesh");
 	StaticMesh->SetSimulatePhysics(true);
 	StaticMesh->SetGenerateOverlapEvents(true);
+	StaticMesh->SetCollisionObjectType(ECollisionChannel::ECC_PhysicsBody);
 	SetRootComponent(StaticMesh);
 
 }
@@ -35,7 +36,6 @@ void ANPCxPickUpActor::PickUp(USceneComponent* AttachTo)
 {
 	if (StaticMesh) {
 		StaticMesh->SetSimulatePhysics(false);
-
 
 		AttachToComponent(AttachTo, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 	}
